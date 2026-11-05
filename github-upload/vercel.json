@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "style.css", "use": "@vercel/static" },
+    { "src": "script.js", "use": "@vercel/static" },
+    { "src": "api/dust.js", "use": "@vercel/node", "config": { "maxDuration": 30 } }
+  ],
+  "routes": [
+    { "src": "/api/dust/?", "dest": "/api/dust.js" },
+    { "src": "/", "dest": "/index.html" },
+    { "handle": "filesystem" },
+    { "src": "/.*", "status": 404 }
+  ]
+}
