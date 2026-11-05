@@ -1,0 +1,195 @@
+:root {
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --blue: #2f80ed;
+  --green: #2eb67d;
+  --orange: #f2994a;
+  --red: #eb5757;
+  --gray: #9ca3af;
+  --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Malgun Gothic", "Noto Sans KR", sans-serif;
+  background: linear-gradient(180deg, #edf4ff 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(1100px, calc(100% - 24px));
+  margin: 24px auto;
+  padding: 20px;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.label-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+#regionSelect {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary-box {
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 24px 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(47, 128, 237, 0.08);
+}
+
+.summary-label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.average-value {
+  margin-top: 10px;
+  font-size: clamp(2.3rem, 8vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: var(--blue);
+}
+
+.station-section {
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 18px 16px 20px;
+  box-shadow: var(--shadow);
+}
+
+.section-head h2 {
+  margin: 0 0 14px;
+  font-size: 1.2rem;
+}
+
+.status-message {
+  min-height: 24px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.station-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: 16px;
+}
+
+.station-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+.station-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.metric span {
+  font-size: 0.82rem;
+  color: rgba(17, 24, 39, 0.75);
+}
+
+.metric strong {
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.station-time {
+  font-size: 0.8rem;
+  color: rgba(17, 24, 39, 0.72);
+  word-break: break-word;
+}
+
+.grade-1 {
+  background: rgba(47, 128, 237, 0.12);
+  border-color: rgba(47, 128, 237, 0.25);
+}
+
+.grade-2 {
+  background: rgba(46, 182, 125, 0.12);
+  border-color: rgba(46, 182, 125, 0.3);
+}
+
+.grade-3 {
+  background: rgba(242, 153, 74, 0.12);
+  border-color: rgba(242, 153, 74, 0.28);
+}
+
+.grade-4 {
+  background: rgba(235, 87, 87, 0.12);
+  border-color: rgba(235, 87, 87, 0.28);
+}
+
+.grade-empty {
+  background: rgba(156, 163, 175, 0.12);
+  border-color: rgba(156, 163, 175, 0.3);
+}
+
+@media (min-width: 680px) {
+  .top-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .label-text {
+    min-width: 90px;
+  }
+
+  #regionSelect {
+    width: min(320px, 100%);
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지역별 대기질 정보</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <label for="regionSelect" class="label-text">시도 선택</label>
+        <select id="regionSelect" aria-label="시도 선택">
+          <option value="전국">전국</option>
+          <option value="서울" selected>서울</option>
+          <option value="부산">부산</option>
+          <option value="대구">대구</option>
+          <option value="인천">인천</option>
+          <option value="광주">광주</option>
+          <option value="대전">대전</option>
+          <option value="울산">울산</option>
+          <option value="세종">세종</option>
+          <option value="경기">경기</option>
+          <option value="강원">강원</option>
+          <option value="충북">충북</option>
+          <option value="충남">충남</option>
+          <option value="전북">전북</option>
+          <option value="전남">전남</option>
+          <option value="경북">경북</option>
+          <option value="경남">경남</option>
+          <option value="제주">제주</option>
+        </select>
+      </header>
+
+      <main class="content-wrap">
+        <section class="summary-box">
+          <p class="summary-label" id="regionTitle">서울 평균 미세먼지</p>
+          <div class="average-value" id="averageValue">-</div>
+          <p class="summary-label">PM10 · 측정값이 있는 측정소의 산술평균 · 단위: μg/m³</p>
+        </section>
+
+        <section class="station-section">
+          <div class="section-head">
+            <h2 id="stationHeading">서울 측정소 목록</h2>
+          </div>
+          <div id="statusMessage" class="status-message" aria-live="polite"></div>
+          <div id="stationList" class="station-grid" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+    <noscript>대기질 정보를 조회하려면 브라우저에서 JavaScript를 활성화해주세요.</noscript>
+
+    <script src="script.js"></script>
+  </body>
+</html>
